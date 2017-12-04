@@ -1,0 +1,1 @@
+cmd_/home/luopu/lib/template/kernel/built-in.o :=  rm -f /home/luopu/lib/template/kernel/built-in.o; /opt/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux/bin/arm-linux-gnueabihf-ar rcsD /home/luopu/lib/template/kernel/built-in.o

@@ -1,0 +1,33 @@
+# For more information see: linux/Documentation/kbuild/modules.txt
+# and also: http://tldp.org/LDP/lkmpg/2.6/html/c119.html
+
+ifneq ($(KERNELRELEASE),) # kbuild part of makefile
+
+#uncomment to get source debugging...
+EXTRA_CFLAGS += -g
+
+obj-m += test.o
+#test1-objs :=test.o select.o
+
+#obj-m += mt630.o
+#mt630-objs :=tcp_accl.o tcpa_proc.o tcpa_hash.o tcpa_trans.o ringbuf.o aes_wrap.o
+
+else # Normal part of the Makefile
+
+#KERNELDIR = $(KDIR)
+#ARCH      = $(KARCH)
+KERNELDIR = /home/luopu/mt-linux/
+CROSS_ARCH := ARCH=arm 
+CROSS_COMPILE_SET := CROSS_COMPILE=/opt/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux/bin/arm-linux-gnueabihf-
+
+all:
+	$(MAKE) $(CROSS_ARCH) $(CROSS_COMPILE_SET) -C $(KERNELDIR) M=$(shell pwd)
+	cp test.ko /home/luopu/tmp
+
+clean:
+	rm -f Mod*
+	rm -f *[.k]o
+	rm -f *mod*
+
+
+endif

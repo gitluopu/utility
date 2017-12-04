@@ -1,0 +1,1 @@
+cmd_/home/luopu/lib/template/kernel/test.ko := /opt/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux/bin/arm-linux-gnueabihf-ld -EL -r  -T /home/luopu/work/mt-linux/scripts/module-common.lds --build-id  -o /home/luopu/lib/template/kernel/test.ko /home/luopu/lib/template/kernel/test.o /home/luopu/lib/template/kernel/test.mod.o
